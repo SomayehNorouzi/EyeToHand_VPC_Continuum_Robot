@@ -40,15 +40,6 @@
 *
 *****************************************************************************/
 
-/*!
-
-\file NewVpViper.cpp
-
-Modelisation of the ADEPT Viper 650 or 850 robot.
-
-*/
-
-
 #include "stdafx.h"
 #include <visp/vpDebug.h>
 #include <visp/vpVelocityTwistMatrix.h>
@@ -70,9 +61,6 @@ Default constructor.
 */
 NewVpViper::NewVpViper()
 {
-	// Default values are initialized
-
-	// Denavit Hartenberg parameters
 	a1 = 0.075;
 	a2 = 0.365;
 	a3 = 0.090;

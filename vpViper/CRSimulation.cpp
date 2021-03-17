@@ -15,8 +15,8 @@
 #include <visp/vpTranslationVector.h>
 #include <visp/vpRotationMatrix.h>
 #include "CRSimulation.h"
-#include <cmath>    // std::fabs
-#include <limits>   // numeric_limits
+#include <cmath>    
+#include <limits>   
 
 //l;;
 const unsigned int CRSimulation::njoint = 3; // 
@@ -24,25 +24,12 @@ const unsigned int CRSimulation::njoint = 3; //
 CRSimulation::CRSimulation()
 {
 	// Default values are initialized
-
 	// Denavit Hartenberg parameters
-	d7 = 0; // if getting a value more than 0, must be updated in get_wMe
+	d7 = 0;     // if getting a value more than 0, must be updated in get_wMe
 	L = 0.07;
 	DK = 0.011; //Knob diameter
 	RC = 0.0145;//radius of fixed curvature
 	K = 1;
-
-	// Software joint limits in radians
-	//joint_min.resize(njoint);
-	//joint_min[0] = vpMath::rad(-180);
-	//joint_min[1] = vpMath::rad(-180);
-	//joint_min[2] = -0.32;// 
-
-	//joint_max.resize(njoint);
-	//joint_max[0] = vpMath::rad(180);
-	//joint_max[1] = vpMath::rad(180);
-	//joint_max[2] = 0.32;// 
-
 }
 
 
@@ -69,7 +56,7 @@ CRSimulation::get_fMe(const vpColVector& q)
 	double cd2 = cos(2 * q2);
 	double sd2 = sin(2 * q2);
 
-	vpHomogeneousMatrix fMe; //(07/17/2020)
+	vpHomogeneousMatrix fMe; 
 
 	fMe[0][0] = cd2 * c1;
 	fMe[1][0] = cd2 * s1;
@@ -90,8 +77,6 @@ CRSimulation::get_fMe(const vpColVector& q)
 	fMe[1][3] = (2 * L * c2 * c2 * s1) / (2 * q2 - M_PI);
 	fMe[2][3] = q3 - (L * sd2 / (2 * q2 - M_PI));
 	fMe[3][3] = 1;
-
-	// std::cout << "Effector position fMe: " << std::endl << fMe;
 	return fMe;
 }
 /*!
@@ -157,9 +142,6 @@ CRSimulation::get_wMe(vpHomogeneousMatrix& wMe)
 	wMe[0][3] = 0;
 	wMe[1][3] = 0;
 	wMe[2][3] = 0;
-
-	// Set the translation
-
 }
 
 
@@ -206,7 +188,6 @@ CRSimulation::get_eJe(const vpColVector& q, vpMatrix& eJe)
 }
 
 
-
 void
 CRSimulation::get_fJw(const vpColVector& q, vpMatrix& fJw)
 {
@@ -225,10 +206,7 @@ CRSimulation::get_fJw(const vpColVector& q, vpMatrix& fJw)
 	double sd2 = sin(2 * q2);
 
 	double b = DK / (2 * L * RC);
-
-
-	// J-Catheter
-
+    // J-Catheter
 	fJw.resize(6, 3);
 
 	fJw[0][0] = -2 * L * c2 * c2 * s1 / (2 * q2 - M_PI);
@@ -332,11 +310,8 @@ CRSimulation::setfMc(vpHomogeneousMatrix& fMc)
 		}
 }
 
-
 vpHomogeneousMatrix
 CRSimulation::get_fMc()
 {
 	return _fMc;
 }
-
-

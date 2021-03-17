@@ -72,10 +72,6 @@ public:
 	void get_fJe(const vpColVector &q, vpMatrix &fJe);
 	void get_eJe(const vpColVector &q, vpMatrix &eJe);
 	void get_q(const vpColVector &CamVel, vpColVector &q);
-	vpColVector	get_qdot(const vpColVector& CamVel, const vpColVector& q);
-	//virtual void set_eMc(const vpHomogeneousMatrix &eMc_);
-	//virtual void set_eMc(const vpTranslationVector &etc_, const vpRxyzVector &erc_);
-
 	vpColVector getJointMin();
 	vpColVector getJointMax();
 	double getCoupl56();
@@ -97,16 +93,16 @@ protected:
 	vpTranslationVector etc; // meters
 	vpRxyzVector erc;        // radian
 
-		//vv					 // Denavit-Hartenberg parameters
-	double a1, d1; //!< for joint 1
-	double a2;     //!< for joint 2
-	double a3;     //!< for joint 3
-	double d4;     //!< for joint 4
-	double d6;     //!< for joint 6
-	double d7;     //!< for force/torque location
-	double c56;    //!< Mechanical coupling between joint 5 and joint 6
+	// Denavit-Hartenberg parameters
+	double a1, d1; 
+	double a2;     
+	double a3;    
+	double d4;     
+	double d6;     
+	double d7;     
+	double c56;    
 	double _SamplingTime;
-					   // Software joint limits in radians
+	// Software joint limits in radians
 	vpColVector joint_max; // Maximal value of the joints
 	vpColVector joint_min; // Minimal value of the joints
 };

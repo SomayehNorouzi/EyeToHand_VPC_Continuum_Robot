@@ -18,37 +18,24 @@ public:
 	vpHomogeneousMatrix get_fMe(const vpColVector& q);
 
 	void setfMc(vpHomogeneousMatrix& fMc);
-	vpHomogeneousMatrix get_fMc();//**************************************************New
-
-	//vpHomogeneousMatrix get_fMc(const vpColVector &q);
-
+	vpHomogeneousMatrix get_fMc();
 	void get_fMw(const vpColVector& q, vpHomogeneousMatrix& fMw);
 	void get_wMe(vpHomogeneousMatrix& wMe);
 	//void get_eMc(vpHomogeneousMatrix &eMc);
 	void get_eMs(vpHomogeneousMatrix& eMs);
 
-
-	//void get_fMc(const vpColVector &q, vpHomogeneousMatrix &fMc);
-	//void get_eMc(const vpColVector& q, const vpHomogeneousMatrix& fMc, vpHomogeneousMatrix& eMc);
-
-	//void get_cMe(vpHomogeneousMatrix &cMe);
-	//void get_cVe(vpVelocityTwistMatrix &cVe);
 	void get_fJw(const vpColVector& q, vpMatrix& fJw);
 	void get_fJe(const vpColVector& q, vpMatrix& fJe);
 	void get_eJe(const vpColVector& q, vpMatrix& eJe);
 	void get_q(const vpColVector& CamVel, vpColVector& q);
 	vpColVector get_qdot(const vpColVector& CamVel, const vpColVector& q);
-	//virtual void set_eMc(const vpHomogeneousMatrix &eMc_);
-	//virtual void set_eMc(const vpTranslationVector &etc_, const vpRxyzVector &erc_);
-
+	
 	vpColVector getJointMin();
 	vpColVector getJointMax();
-	//@}
+
 	void setSamplingTime(double SamplingTime);
 	double getSamplingTime();
-	
-	
-	
+
 	friend VISP_EXPORT std::ostream& operator<<(std::ostream& os, const NewVpViper& viper);
 
 private:

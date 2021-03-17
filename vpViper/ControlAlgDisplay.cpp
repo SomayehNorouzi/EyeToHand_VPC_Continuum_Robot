@@ -38,20 +38,13 @@
 	*
 	*****************************************************************************/
 
-	// Servo
+
 #include "ControlAlg.h"
-
-	// Meter/pixel conversion
 #include <visp3/core/vpCameraParameters.h>
-
-	// Color / image / display
 #include <visp3/core/vpColor.h>
 #include <visp3/core/vpImage.h>
-
 #include <visp3/core/vpDisplay.h>
-
 #include "ControlAlgDisplay.h"
-
 #include <visp3/visual_features/vpBasicFeature.h>
 
 	void ControlAlgDisplay::display(const ControlAlg &s, const vpCameraParameters &cam, const vpImage<unsigned char> &I,
@@ -91,6 +84,5 @@ void ControlAlgDisplay::display(const ControlAlg &s, const vpCameraParameters &c
 			(*it_s)->display(cam, I, currentColor, thickness);
 		}
 	}
-	//  vpDisplay::flush(I) ;
 	
 }
