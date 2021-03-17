@@ -35,13 +35,6 @@ public:
 
 	void setSamplingTime(double SamplingTime);
 	double getSamplingTime();
-
-	friend VISP_EXPORT std::ostream& operator<<(std::ostream& os, const NewVpViper& viper);
-
-private:
-	bool convertJointPositionInLimits(unsigned int joint, const double& q, double& q_mod,
-		const bool& verbose = false);
-
 public:
 	static const unsigned int njoint; ///< Number of joint.
 

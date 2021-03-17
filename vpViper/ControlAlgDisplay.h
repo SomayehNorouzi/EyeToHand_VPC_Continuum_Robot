@@ -38,27 +38,12 @@
 
 #ifndef ControlAlgDisplay_H
 #define ControlAlgDisplay_H
-
-/*!
-\file vpServoDisplay.h
-\brief interface with the image for feature display
-*/
-
-// Servo
 #include "ControlAlg.h"
-
-// Meter/pixel conversion
 #include <visp3/core/vpCameraParameters.h>
-
-// Color / image / display
 #include <visp3/core/vpColor.h>
 #include <visp3/core/vpImage.h>
 #include <visp3/core/vpRGBa.h>
-/*!
-\class vpServoDisplay
-\ingroup group_task
-\brief Interface with the image for feature display.
-*/
+
 class VISP_EXPORT ControlAlgDisplay
 {
 public:

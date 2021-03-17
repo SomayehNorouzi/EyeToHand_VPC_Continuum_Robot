@@ -154,7 +154,6 @@
     <ClInclude Include="ControlAlg.h" />
     <ClInclude Include="ControlAlgDisplay.h" />
     <ClInclude Include="CRSimulation.h" />
-    <ClInclude Include="NewVpViper.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -163,7 +162,6 @@
     <ClCompile Include="ControlAlgDisplay.cpp" />
     <ClCompile Include="CRSimulation.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="NewVpViper.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

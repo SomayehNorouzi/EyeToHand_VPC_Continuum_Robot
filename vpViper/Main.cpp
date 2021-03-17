@@ -8,8 +8,7 @@
 #include <visp3/visual_features/vpFeatureBuilder.h> 
 #include "ControlAlgDisplay.h"
 #include <visp/vpViper.h>                          
-#include <stdio.h>
-#include "NewVpViper.h"                             
+#include <stdio.h>                           
 #include "CRSimulation.h"
 #include <nlopt.hpp>
 #include "ControlAlg.h"
